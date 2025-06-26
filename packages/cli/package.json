@@ -5,7 +5,7 @@
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "gemini": "dist/index.js"
+    "code-agent": "./dist/index.js"
   },
   "scripts": {
     "build": "node ../../scripts/build_package.js",
