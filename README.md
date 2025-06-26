@@ -1,101 +1,104 @@
-# Gemini CLI
+# Kifiya Code Agent CLI
 
-[![Gemini CLI CI](https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/google-gemini/gemini-cli/actions/workflows/ci.yml)
+The **Kifiya Code Agent CLI** is a command-line AI workflow tool that connects to your tools, understands your code, and accelerates your development workflows.
 
-![Gemini CLI Screenshot](./docs/assets/gemini-screenshot.png)
+With the Kifiya Code Agent CLI you can:
 
-This repository contains the Gemini CLI, a command-line AI workflow tool that connects to your
-tools, understands your code and accelerates your workflows.
+- Query and edit large codebases, even beyond a 1M token context window.
+- Generate new apps from PDFs or sketches using advanced multimodal capabilities.
+- Automate operational tasks such as querying pull requests or handling complex rebases.
+- Connect new capabilities via tools and MCP servers, including [media generation with Imagen, Veo, or Lyria](https://github.com/GoogleCloudPlatform/vertex-ai-creative-studio/tree/main/experiments/mcp-genmedia).
+- Ground your queries with the integrated [Google Search](https://ai.google.dev/gemini-api/docs/grounding) tool.
 
-With the Gemini CLI you can:
+---
 
-- Query and edit large codebases in and beyond Gemini's 1M token context window.
-- Generate new apps from PDFs or sketches, using Gemini's multimodal capabilities.
-- Automate operational tasks, like querying pull requests or handling complex rebases.
-- Use tools and MCP servers to connect new capabilities, including [media generation with Imagen,
-  Veo or Lyria](https://github.com/GoogleCloudPlatform/vertex-ai-creative-studio/tree/main/experiments/mcp-genmedia)
-- Ground your queries with the [Google Search](https://ai.google.dev/gemini-api/docs/grounding)
-  tool, built in to Gemini.
+## 🚀 Quickstart
 
-## Quickstart
+1. **Prerequisites:**  
+   Ensure you have [Node.js version 18](https://nodejs.org/en/download) or higher installed.
 
-1. **Prerequisites:** Ensure you have [Node.js version 18](https://nodejs.org/en/download) or higher installed.
-2. **Run the CLI:** Execute the following command in your terminal:
+2. **Run the CLI:**  
+   Use one of the following methods in your terminal:
 
+   **Using npx:**
+
+   **Or, install globally:**
    ```bash
-   npx https://github.com/google-gemini/gemini-cli
+   npm install -g kifiya-code-agent
+   code-agent
    ```
 
-   Or install it with:
+3. **Pick a color theme** when prompted.
 
-   ```bash
-   npm install -g @google/gemini-cli
-   gemini
-   ```
+4. **Authenticate:**  
+   Sign in with your personal Google account when prompted. This provides up to 60 model requests per minute and 1,000 per day.
 
-3. **Pick a color theme**
-4. **Authenticate:** When prompted, sign in with your personal Google account. This will grant you up to 60 model requests per minute and 1,000 model requests per day using Gemini.
+You're now ready to use the Kifiya Code Agent CLI!
 
-You are now ready to use the Gemini CLI!
+---
 
-### For advanced use or increased limits:
+### 🔑 For advanced use or higher request limits
 
-If you need to use a specific model or require a higher request capacity, you can use an API key:
+If you need to use a specific model or require more requests, use an API key:
 
 1. Generate a key from [Google AI Studio](https://aistudio.google.com/apikey).
-2. Set it as an environment variable in your terminal. Replace `YOUR_API_KEY` with your generated key.
+2. Set it as an environment variable (replace `YOUR_API_KEY`):
 
    ```bash
    export GEMINI_API_KEY="YOUR_API_KEY"
    ```
 
-For other authentication methods, including Google Workspace accounts, see the [authentication](./docs/cli/authentication.md) guide.
+For additional authentication options (including Google Workspace), see the [authentication guide](./docs/cli/authentication.md).
 
-## Examples
+---
 
-Once the CLI is running, you can start interacting with Gemini from your shell.
+## 💡 Examples
 
-You can start a project from a new directory:
+Once the CLI is running, interact with the Kifiya Code Agent right from your shell.
 
+**Start a project in a new directory:**
 ```sh
 cd new-project/
-gemini
-> Write me a Gemini Discord bot that answers questions using a FAQ.md file I will provide
+kifiya-code
+> Write me a Discord bot that answers questions using a FAQ.md file I will provide
 ```
 
-Or work with an existing project:
-
+**Work with an existing project:**
 ```sh
-git clone https://github.com/google-gemini/gemini-cli
-cd gemini-cli
-gemini
-> Give me a summary of all of the changes that went in yesterday
+git clone https://github.com/your-org/kifiya-code-agent
+cd kifiya-code-agent
+kifiya-code
+> Give me a summary of all the changes from yesterday
 ```
 
-### Next steps
+---
 
-- Learn how to [contribute to or build from the source](./CONTRIBUTING.md).
-- Explore the available **[CLI Commands](./docs/cli/commands.md)**.
-- If you encounter any issues, review the **[Troubleshooting guide](./docs/troubleshooting.md)**.
-- For more comprehensive documentation, see the [full documentation](./docs/index.md).
-- Take a look at some [popular tasks](#popular-tasks) for more inspiration.
+## 📚 Next Steps
 
-### Troubleshooting
+- Learn how to [contribute or build from source](./CONTRIBUTING.md).
+- Explore available **[CLI Commands](./docs/cli/commands.md)**.
+- For troubleshooting, see the **[Troubleshooting guide](./docs/troubleshooting.md)**.
+- For comprehensive documentation, see the [full documentation](./docs/index.md).
+- Check out some [popular tasks](#popular-tasks) for inspiration.
 
-Head over to the [troubleshooting](docs/troubleshooting.md) guide if you're
-having issues.
+---
 
-## Popular tasks
+## 🛠 Troubleshooting
+
+If you encounter issues, consult the [troubleshooting guide](docs/troubleshooting.md).
+
+---
+
+## ⭐ Popular Tasks
 
 ### Explore a new codebase
 
-Start by `cd`ing into an existing or newly-cloned repository and running `gemini`.
+Navigate to your repository directory and run the CLI:
 
-```text
+```sh
+cd my-repo/
+kifiya-code
 > Describe the main pieces of this system's architecture.
-```
-
-```text
 > What security mechanisms are in place?
 ```
 
@@ -103,34 +106,27 @@ Start by `cd`ing into an existing or newly-cloned repository and running `gemini
 
 ```text
 > Implement a first draft for GitHub issue #123.
-```
-
-```text
 > Help me migrate this codebase to the latest version of Java. Start with a plan.
 ```
 
 ### Automate your workflows
 
-Use MCP servers to integrate your local system tools with your enterprise collaboration suite.
+Integrate system tools and collaboration suites via MCP servers:
 
 ```text
 > Make me a slide deck showing the git history from the last 7 days, grouped by feature and team member.
-```
-
-```text
 > Make a full-screen web app for a wall display to show our most interacted-with GitHub issues.
 ```
 
 ### Interact with your system
 
 ```text
-> Convert all the images in this directory to png, and rename them to use dates from the exif data.
+> Convert all the images in this directory to png, and rename them to use dates from the EXIF data.
+> Organize my PDF invoices by month of expenditure.
 ```
 
-```text
-> Organise my PDF invoices by month of expenditure.
-```
+---
 
-## Terms of Service and Privacy Notice
+## 📄 Terms of Service and Privacy Notice
 
-For details on the terms of service and privacy notice applicable to your use of Gemini CLI, see the [Terms of Service and Privacy Notice](./docs/tos-privacy.md).
+See the [Terms of Service and Privacy Notice](./docs/tos-privacy.md) for details on using Kifiya Code Agent CLI.
