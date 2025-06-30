@@ -51,7 +51,7 @@
     "start:gcp": "concurrently --raw --kill-others \"npm run telemetry -- --target=gcp\" \"npm start\""
   },
   "bin": {
-    "gemini": "bundle/gemini.js"
+    "code-agent": "bundle/gemini.js"
   },
   "files": [
     "bundle/",
